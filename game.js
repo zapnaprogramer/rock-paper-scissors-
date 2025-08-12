@@ -20,13 +20,20 @@ function game(bot, human) {
     (bot === "scissors" && human === "Paper") ||
     (bot === "Paper" && human === "rock")
   ) {
+    botscore++;
     return "Computer Won";
-  } else if (bot === human) {
+
+ } else if (bot === human) {
     return "It's a tie!";
-  } else {
-    return "You Won!";
-  }
-}
+  }else {
+      humanScore++;
+      return "You Won!";}
+
+
+  }
+
+var humanScore = 0;
+var botscore = 0;
 
 let bot = Thebotchoice();
 let human = humanchoice();
@@ -34,3 +41,4 @@ let human = humanchoice();
 console.log("Computer chose:", bot);
 console.log("You chose:", human);
 console.log(game(bot, human));
+console.log(botscore , humanScore);
